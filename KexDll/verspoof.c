@@ -299,6 +299,11 @@ VOID KexApplyVersionSpoof(
 		MinorVersion = 3;
 		BuildNumber = 9600;
 		break;
+	case WinVerSpoofWin10TH1:
+		MajorVersion = 10;
+		MinorVersion = 0;
+		BuildNumber = 10240; // Win10 TH1
+		break;
 	case WinVerSpoofWin1021H1:
 		MajorVersion = 10;
 		MinorVersion = 0;
