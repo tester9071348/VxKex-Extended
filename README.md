@@ -34,15 +34,15 @@ FAQ
 - Blender
 - Blockbench
 - Calibre
-- Chromium (including Ungoogled Chromium)
+- Chromium (including Ungoogled Chromium) 132
 - Citra
 - Commander Wars
 - Cygwin
 - Dasel
 - Discord Canary
 - ElectronMail
-- Firefox
-- GIMP (3.0.0-RC2)
+- Firefox 134.0.2
+- GIMP 3.0.0-RC2
 - GitHub Desktop
 - HandBrake
 - Kodi
@@ -55,7 +55,7 @@ FAQ
 - Opera
 - osu!lazer
 - Python
-- qBittorrent
+- qBittorrent 5.1.0 beta1
 - QMMP
 - Qt Creator
 - Rufus
