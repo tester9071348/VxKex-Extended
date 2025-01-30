@@ -106,7 +106,7 @@ API extension is accomplished by editing the program's DLL import table so that 
 
 **A:** You need to install Visual Studio 2010 first, as it is the only version that is
 compatible with this software. After this, you need to compile both the x86 and x64
-binaries of the software (beginning with x86). MgKex requires some x86 binaries
+binaries of the software (beginning with x86). Ext7 requires some x86 binaries
 produced by compiling the software in x86 first, before it can be used in x64.
 
 The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the version
