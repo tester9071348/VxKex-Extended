@@ -17,7 +17,8 @@ After installation, usage is easy. Here are the ways to enable Ext7:
 1. Just right click on a program (.exe or .msi), open the Properties dialog, and select "Ext7" tab. Then, check the check box which says "Enable VxKex NEXT for this program", and try to run the program. For shortcuts, select "Shortcut" tab in the Properties dialog, click "Open file location" button, and then perform the actions above.
 2. Find "Ext7 Global Settings" from start menu and open it, click "Add" button, select a program (.exe or .msi), click "Open" button, and try to run the program.
 
-![Ext7 configuration GUI](/example-screenshot.png)
+![Ext7 configuration GUI](/example-screenshot-1.png)
+![Ext7 configuration GUI](/example-screenshot-2.png)
 
 Some programs require additional configuration. There's a file called "**Application Compatibility List.docx**" inside the Ext7 installation folder (which is C:\Program Files\VxKex by default) which details these steps, but for the most part, all configuration is self-explanatory.
 
