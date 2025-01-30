@@ -28,6 +28,7 @@ PCWSTR HumanReadableWinVerSpoof[] = {
 	L"Windows 7 SP1",
 	L"Windows 8",
 	L"Windows 8.1",
+	L"Windows 10 TH1",
 	L"Windows 10 21H1",
 	L"Windows 10 21H2",
 	L"Windows 10 22H2",
@@ -134,6 +135,11 @@ STATIC NTSTATUS NTAPI Ext_RtlGetVersion(
 			Version->dwMajorVersion		= 6;
 			Version->dwMinorVersion		= 3;
 			Version->dwBuildNumber		= 9600;
+			break;
+		case WinVerSpoofWin10TH1:
+			Version->dwMajorVersion		= 10;
+			Version->dwMinorVersion		= 0;
+			Version->dwBuildNumber		= 10240;
 			break;
 		case WinVerSpoofWin1021H1:
 			Version->dwMajorVersion		= 10;
