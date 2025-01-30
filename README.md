@@ -111,3 +111,8 @@ produced by compiling the software in x86 first, before it can be used in x64.
 
 The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the version
 information globally by 1 each time it is executed.
+
+Introduction
+============
+**Ungoogled Chromium 132**
+![Ungoogled Chromium 132](/uc132.png)
