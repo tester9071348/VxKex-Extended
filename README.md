@@ -48,6 +48,7 @@ FAQ
 - HandBrake
 - Kodi
 - Life is Strange: True Colors 4.25
+- Listary
 - MKVToolNix
 - MongoDB
 - MPC-Qt
