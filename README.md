@@ -91,7 +91,7 @@ The majority of Qt6 applications will work, and many Electron applications will 
 
 **A**: Currently, Ext7 is designed for use only with Windows 7. If you use Windows 8 or 8.1, Ext7 will do nothing useful.
 
-**Q: Can I remove VxKex, VxKex NEXT or Ext7 after upgrading to Windows 8/8.1/10/11?**
+**Q: Can I remove VxKex or Ext7 after upgrading to Windows 8/8.1/10/11?**
 
 **A**: Yes. If VxKex is installed, update it to Ext7, then uninstall it from control panel.
 
