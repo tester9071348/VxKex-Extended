@@ -5,7 +5,7 @@ Ext7 is a set of API extensions for Windows 7 that allow some Windows 8, 8.1 and
 
 To download and install, see the [releases page](https://github.com/tester9071348/Ext7/releases).
 
-**Uninstalling the following softwares before installing is recommanded.**
+**Uninstalling the following softwares before installing is recommended.**
 
 - **0patch Agent**
   It might cause Chromium-based browsers and JetBrains IDEs to crash after enabling Ext7 and running it.
@@ -105,14 +105,17 @@ API extension is accomplished by editing the program's DLL import table so that 
 **Q: How do I compile Ext7?**
 
 **A:** You need to install Visual Studio 2010 first, as it is the only version that is
-compatible with this software. After this, you need to compile both the x86 and x64
-binaries of the software (beginning with x86). Ext7 requires some x86 binaries
-produced by compiling the software in x86 first, before it can be used in x64.
+compatible with Ext7. After this, you need to compile both the x86 and x64
+binaries of Ext7 (beginning with x86). Ext7 requires some x86 binaries
+produced by compiling Ext7 in x86 first, before it can be used in x64.
 
 The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the version
 information globally by 1 each time it is executed.
 
 Screenshots
 ============
+**Browservice v0.9.9.2**
+![Browservice v0.9.9.2](/bs.png)
+
 **Ungoogled Chromium 132**
 ![Ungoogled Chromium 132](/uc132.png)
