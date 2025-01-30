@@ -44,7 +44,7 @@ To help developers investigate the issue, please follow the steps below to colle
 To provide more detailed information about APIs used by the application, you can use **YY-Thunks**:  
 
 1. Download **YY-Thunks** from the official release page (https://github.com/Chuyu-Team/YY-Thunks/releases/latest)
-2. Run the following command in a terminal, replacing `D:\Tool\SomeProgram.exe` with the path to your application:  
+2. Run the following command in a Command Prompt, replacing `D:\Tool\SomeProgram.exe` with the path to your application:  
    ```  
    YY.Depends.Analyzer.exe "D:\Tool\SomeProgram.exe" /IgnoreReady /ReportView:Table /Target:6.1.7600  
    ```  
