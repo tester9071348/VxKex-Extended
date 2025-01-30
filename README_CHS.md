@@ -1,25 +1,25 @@
 介绍
 ============
 
-VxKex NEXT 是一套适用于 Windows 7 的 API 扩展，可让一些 Windows 8、8.1 和 10 独占应用程序在 Windows 7 上运行。
+Ext7 是一套适用于 Windows 7 的 API 扩展，可让一些 Windows 8、8.1 和 10 独占应用程序在 Windows 7 上运行。
 
 如需下载和安装，请参阅[版本页面](https://github.com/YuZhouRen86/VxKex-NEXT/releases)。
 
 **安装前，建议卸载以下软件。**
 
 - **0patch Agent**  
-  它可能导致基于 Chromium 的浏览器和 JetBrains IDE 在启用 VxKex NEXT 并运行后崩溃。
+  它可能导致基于 Chromium 的浏览器和 JetBrains IDE 在启用 Ext7 并运行后崩溃。
 
 - **MacType**  
-  它可能导致所有程序在启用 VxKex NEXT 后无法启动。
+  它可能导致所有程序在启用 Ext7 后无法启动。
 
-安装后，使用很简单。以下是启用 VxKex NEXT 的方法：
-1. 右键单击程序（.exe 或 .msi），打开属性对话框，选择“VxKex”选项卡。然后，选中“为此程序启用 VxKex NEXT”复选框，并尝试运行程序。对于快捷方式，需要在属性对话框中选择“快捷方式”选项卡，点击“打开文件位置”按钮，然后执行以上操作。
-2. 从开始菜单中找到“VxKex NEXT Global Settings”并打开，点击“添加”按钮，选择程序（.exe 或 .msi），点击“打开”按钮，并尝试运行程序。
+安装后，使用很简单。以下是启用 Ext7 的方法：
+1. 右键单击程序（.exe 或 .msi），打开属性对话框，选择“VxKex”选项卡。然后，选中“为此程序启用 Ext7”复选框，并尝试运行程序。对于快捷方式，需要在属性对话框中选择“快捷方式”选项卡，点击“打开文件位置”按钮，然后执行以上操作。
+2. 从开始菜单中找到“Ext7 Global Settings”并打开，点击“添加”按钮，选择程序（.exe 或 .msi），点击“打开”按钮，并尝试运行程序。
 
-![VxKex configuration GUI](/example-screenshot.png)
+![Ext7 configuration GUI](/example-screenshot.png)
 
-有些程序需要额外配置。VxKex NEXT 安装文件夹（默认为 C:\Program Files\VxKex 文件夹）内有一个名为“**Application Compatibility List.docx**”的文件，其中详细说明了这些步骤，但大多数情况下，所有配置都是不言自明的。
+有些程序需要额外配置。Ext7 安装文件夹（默认为 C:\Program Files\VxKex 文件夹）内有一个名为“**Application Compatibility List.docx**”的文件，其中详细说明了这些步骤，但大多数情况下，所有配置都是不言自明的。
 
 如果您是开发人员，源代码将以 7z 文件的形式在版本页面上提供。
 
