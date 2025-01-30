@@ -115,8 +115,8 @@ information globally by 1 each time it is executed.
 
 Screenshots
 ============
-**Browservice v0.9.9.2**
-![Browservice v0.9.9.2](/bs.png)
+**Browservice v0.9.11.0**
+![Browservice v0.9.11.0](/bs.png)
 
 **Ungoogled Chromium 132**
 ![Ungoogled Chromium 132](/uc132.png)
