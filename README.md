@@ -101,3 +101,13 @@ The majority of Qt6 applications will work, and many Electron applications will 
 Specifically, the "VerifierDlls" value is set to point to a Ext7 DLL. This DLL then loads into the process.
 
 API extension is accomplished by editing the program's DLL import table so that instead of importing from Windows 8/8.1/10/11 DLLs, it imports Ext7 DLLs instead. These Ext7 DLLs contain implementations of Windows API functions which were introduced in newer versions of Windows.
+
+**Q: How do I compile Ext7?**
+
+**A:** You need to install Visual Studio 2010 first, as it is the only version that is
+compatible with this software. After this, you need to compile both the x86 and x64
+binaries of the software (beginning with x86). MgKex requires some x86 binaries
+produced by compiling the software in x86 first, before it can be used in x64.
+
+The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the version
+information globally by 1 each time it is executed.
