@@ -35,7 +35,7 @@ FAQ
 - Blender
 - Blockbench
 - Calibre
-- Chromium (including Ungoogled Chromium) 132
+- Chromium (including Ungoogled Chromium) 132 <!-- note: version 132.0.6834.160-r1381561 from Hibbiki/chromium-win64 not working -->
 - Citra
 - Commander Wars
 - Cygwin
