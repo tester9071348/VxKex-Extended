@@ -28,7 +28,9 @@ PCWSTR HumanReadableWinVerSpoof[] = {
 	L"Windows 7 SP1",
 	L"Windows 8",
 	L"Windows 8.1",
-	L"Windows 10",
+	L"Windows 10 21H1",
+	L"Windows 10 21H2",
+	L"Windows 10 22H2",
 	L"Windows 11 21H2",
 	L"Windows 11 22H2",
 	L"Windows 11 23H2",
@@ -133,12 +135,21 @@ STATIC NTSTATUS NTAPI Ext_RtlGetVersion(
 			Version->dwMinorVersion		= 3;
 			Version->dwBuildNumber		= 9600;
 			break;
-		case WinVerSpoofWin10:
+		case WinVerSpoofWin1021H1:
+			Version->dwMajorVersion		= 10;
+			Version->dwMinorVersion		= 0;
+			Version->dwBuildNumber		= 19043;
+			break;
+		case WinVerSpoofWin1021H2:
+			Version->dwMajorVersion		= 10;
+			Version->dwMinorVersion		= 0;
+			Version->dwBuildNumber		= 19044;
+			break;
+		case WinVerSpoofWin1022H2:
 			Version->dwMajorVersion		= 10;
 			Version->dwMinorVersion		= 0;
 			Version->dwBuildNumber		= 19045;
 			break;
-			
 		case WinVerSpoofWin1121H2:
 			Version->dwMajorVersion		= 10;
 			Version->dwMinorVersion		= 0;
@@ -282,7 +293,17 @@ VOID KexApplyVersionSpoof(
 		MinorVersion = 3;
 		BuildNumber = 9600;
 		break;
-	case WinVerSpoofWin10:
+	case WinVerSpoofWin1021H1:
+		MajorVersion = 10;
+		MinorVersion = 0;
+		BuildNumber = 19043; // Win10 21H1
+		break;
+	case WinVerSpoofWin1021H2:
+		MajorVersion = 10;
+		MinorVersion = 0;
+		BuildNumber = 19044; // Win10 21H2
+		break;
+	case WinVerSpoofWin1022H2:
 		MajorVersion = 10;
 		MinorVersion = 0;
 		BuildNumber = 19045; // Win10 22H2
