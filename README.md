@@ -42,7 +42,7 @@ FAQ
 - Discord Canary
 - ElectronMail
 - Firefox 134.0.1
-- GIMP 3.0.0-RC2
+- GIMP 3.0.0 RC2
 - GitHub Desktop
 - HandBrake
 - Kodi
