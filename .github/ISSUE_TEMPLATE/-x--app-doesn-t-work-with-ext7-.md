@@ -1,7 +1,7 @@
 ---
-name: '"X" app doesn''t work with VxKex!'
-about: Use this template when an app is not functioning correctly with VxKex enabled.
-title: "[Bug Report] *ProgramName v1.x* doesn't work on Windows 7 using VxKex"
+name: '"X" app doesn''t work with Ext7!'
+about: Use this template when an app is not functioning correctly with Ext7 enabled.
+title: "[Bug Report] *ProgramName v1.x* doesn't work on Windows 7 using Ext7"
 labels: bug
 assignees: ''
 
@@ -30,7 +30,7 @@ To help developers investigate the issue, please follow the steps below to colle
    - Delete all the log files in this folder.
 
 2. **Reproduce the issue**:
-   - Launch the application with **VxKex enabled**.
+   - Launch the application with **Ext7 enabled**.
    - Reproduce the error or behavior you are reporting.
 
 3. **Collect logs**:
