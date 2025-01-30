@@ -42,7 +42,7 @@ FAQ
 - Dasel
 - Discord Canary
 - ElectronMail
-- Firefox 134.0.1
+- Firefox 134.0.2
 - GIMP 3.0.0 RC2
 - GitHub Desktop
 - HandBrake
@@ -117,6 +117,9 @@ Screenshots
 ============
 **Browservice v0.9.11.0**
 ![Browservice v0.9.11.0](/bs.png)
+
+**Firefox 134.0.2**
+![Firefox 134.0.2](/ff134.png)
 
 **Ungoogled Chromium 132**
 ![Ungoogled Chromium 132](/uc132.png)
