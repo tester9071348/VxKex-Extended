@@ -70,34 +70,34 @@ Ext7 是一套适用于 Windows 7 的 API 扩展，可让一些 Windows 8、8.1 
 - Yuzu (gameplay was not tested)
 - Zig
 
-如需获取更多信息，请参阅与 VxKex NEXT 一起安装的**Application Compatibility List.docx**文件。
+如需获取更多信息，请参阅与 Ext7 一起安装的**Application Compatibility List.docx**文件。
 
 大多数 Qt6 应用程序都能正常运行，许多 Electron 应用程序也能正常运行。
 
-**问：VxKex NEXT 会修改系统文件吗？它会使我的系统不稳定吗？**
+**问：Ext7 会修改系统文件吗？它会使我的系统不稳定吗？**
 
-**答**：VxKex NEXT 不会修改任何系统文件。它对整个系统的影响极小。不使用后台服务，不安装全局钩子，加载的 shell 扩展和 DLL 影响也很小，可以随时禁用。您可以放心，您的 Windows 7 将一如既往地保持稳定。
+**答**：Ext7 不会修改任何系统文件。它对整个系统的影响极小。不使用后台服务，不安装全局钩子，加载的 shell 扩展和 DLL 影响也很小，可以随时禁用。您可以放心，您的 Windows 7 将一如既往地保持稳定。
 
 **问：我需要安装特定的更新吗？**
 
 **答**：没有任何更新的 Windows 7 用户仍可使用它，但许多程序需要安装 Services Pack 1、KB2533623（DllDirectories 更新）和 KB2670838（平台更新）才能运行。最好安装这些更新。
 
-**问：如果我安装了 ESU（扩展安全更新），我可以使用 VxKex NEXT 吗？**
+**问：如果我安装了 ESU（扩展安全更新），我可以使用 Ext7 吗？**
 
 **答**：是的，ESU 没有问题。
 
 **问：可以在 Windows 8 或 8.1 中使用吗？**  
 
-**答**：目前，VxKex NEXT 只适用于 Windows 7。如果您使用的是 Windows 8 或 8.1，VxKex NEXT 将毫无用处。
+**答**：目前，Ext7 只适用于 Windows 7。如果您使用的是 Windows 8 或 8.1，Ext7 将毫无用处。
 
-**问：升级到 Windows 8/8.1/10/11 后可以删除 VxKex 或 VxKex NEXT 吗？**
+**问：升级到 Windows 8/8.1/10/11 后可以删除 VxKex 或 VxKex NEXT 或 Ext7 吗？**
 
-**答**：可以。如果 VxKex 已安装，请将其更新为 VxKex NEXT，然后从控制面板卸载它。
+**答**：可以。如果 VxKex 已安装，请将其更新为 Ext7，然后从控制面板卸载它。
 
-**问：VxKex NEXT 如何运作？**
+**问：Ext7 如何运作？**
 
-**答**：VxKex NEXT 的工作原理是在启用 VxKex NEXT 的每个程序中加载一个 DLL。这是通过使用 IFEO（图像文件执行选项）注册表键来实现的。
+**答**：Ext7 的工作原理是在启用 Ext7 的每个程序中加载一个 DLL。这是通过使用 IFEO（图像文件执行选项）注册表键来实现的。
 
-具体来说，“VerifierDlls”值被设置为指向 VxKex NEXT DLL。该 DLL 会加载到进程中。
+具体来说，“VerifierDlls”值被设置为指向 Ext7 DLL。该 DLL 会加载到进程中。
 
-API 扩展是通过编辑程序的动态链接库导入表来实现的，这样程序就不会从 Windows 8/8.1/10/11 动态链接库中导入，而是导入 VxKex NEXT 动态链接库。这些 VxKex NEXT 动态链接库包含较新版本 Windows 中引入的 Windows API 函数的实现。
+API 扩展是通过编辑程序的动态链接库导入表来实现的，这样程序就不会从 Windows 8/8.1/10/11 动态链接库中导入，而是导入 Ext7 动态链接库。这些 Ext7 动态链接库包含较新版本 Windows 中引入的 Windows API 函数的实现。
