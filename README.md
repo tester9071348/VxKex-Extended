@@ -35,19 +35,19 @@ FAQ
 - Blender
 - Blockbench
 - Calibre
-- Chromium (including Ungoogled Chromium) 132 <!-- note: version 132.0.6834.160-r1381561 from Hibbiki/chromium-win64 not working -->
+- Chromium (including Ungoogled Chromium)
 - Citra
 - Commander Wars
 - Cygwin
 - Dasel
 - Discord Canary
 - ElectronMail
-- Firefox 134.0.2
-- GIMP 3.0.0 RC2
+- Firefox
+- GIMP
 - GitHub Desktop
 - HandBrake
 - Kodi
-- Life is Strange: True Colors 4.25
+- Life is Strange: True Colors
 - Listary
 - MKVToolNix
 - MongoDB
@@ -57,7 +57,7 @@ FAQ
 - Opera
 - osu!lazer
 - Python
-- qBittorrent 5.1.0 beta1
+- qBittorrent
 - QMMP
 - Qt Creator
 - Rufus
@@ -120,7 +120,7 @@ Screenshots
 ![Browservice v0.9.11.0](/bs.png)
 
 **Firefox 134.0.2**
-![Firefox 134.0.2](/ff134.png)
+![Firefox 134.0.2](/ff.png)
 
 **Ungoogled Chromium 132**
-![Ungoogled Chromium 132](/uc132.png)
+![Ungoogled Chromium 132](/uc.png)
