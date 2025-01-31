@@ -119,6 +119,9 @@ Screenshots
 **Browservice v0.9.11.0**
 ![Browservice v0.9.11.0](/bs.png)
 
+**Chromium 132**
+![Chromium 132](/ch.png)
+
 **Firefox 134.0.2**
 ![Firefox 134.0.2](/ff.png)
 
