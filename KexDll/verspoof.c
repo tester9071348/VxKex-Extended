@@ -28,14 +28,8 @@ PCWSTR HumanReadableWinVerSpoof[] = {
 	L"Windows 7 SP1",
 	L"Windows 8",
 	L"Windows 8.1",
-	L"Windows 10 TH1",
-	L"Windows 10 21H1",
-	L"Windows 10 21H2",
-	L"Windows 10 22H2",
-	L"Windows 11 21H2",
-	L"Windows 11 22H2",
-	L"Windows 11 23H2",
-	L"Windows 11 24H2"
+	L"Windows 10",
+	L"Windows 11"
 };
 
 UNICODE_STRING CSDVersionUnicodeString;
@@ -136,42 +130,12 @@ STATIC NTSTATUS NTAPI Ext_RtlGetVersion(
 			Version->dwMinorVersion		= 3;
 			Version->dwBuildNumber		= 9600;
 			break;
-		case WinVerSpoofWin10TH1:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 10240;
-			break;
-		case WinVerSpoofWin1021H1:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 19043;
-			break;
-		case WinVerSpoofWin1021H2:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 19044;
-			break;
-		case WinVerSpoofWin1022H2:
+		case WinVerSpoofWin10:
 			Version->dwMajorVersion		= 10;
 			Version->dwMinorVersion		= 0;
 			Version->dwBuildNumber		= 19045;
 			break;
-		case WinVerSpoofWin1121H2:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 22000;
-			break;
-		case WinVerSpoofWin1122H2:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 22621;
-			break;
-		case WinVerSpoofWin1123H2:
-			Version->dwMajorVersion		= 10;
-			Version->dwMinorVersion		= 0;
-			Version->dwBuildNumber		= 22635;
-			break;
-		case WinVerSpoofWin1124H2:
+		case WinVerSpoofWin11:
 		default:
 			Version->dwMajorVersion		= 10;
 			Version->dwMinorVersion		= 0;
@@ -299,42 +263,12 @@ VOID KexApplyVersionSpoof(
 		MinorVersion = 3;
 		BuildNumber = 9600;
 		break;
-	case WinVerSpoofWin10TH1:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 10240; // Win10 TH1
-		break;
-	case WinVerSpoofWin1021H1:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 19043; // Win10 21H1
-		break;
-	case WinVerSpoofWin1021H2:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 19044; // Win10 21H2
-		break;
-	case WinVerSpoofWin1022H2:
+	case WinVerSpoofWin10:
 		MajorVersion = 10;
 		MinorVersion = 0;
 		BuildNumber = 19045; // Win10 22H2
 		break;
-	case WinVerSpoofWin1121H2:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 22000; // Win11 21H2
-		break;
-	case WinVerSpoofWin1122H2:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 22621; // Win11 22H2
-		break;
-	case WinVerSpoofWin1123H2:
-		MajorVersion = 10;
-		MinorVersion = 0;
-		BuildNumber = 22635; // Win11 23H2
-		break;
-	case WinVerSpoofWin1124H2:
+	case WinVerSpoofWin11:
 	default: // default case should always be at the highest win version
 		MajorVersion = 10;
 		MinorVersion = 0;
