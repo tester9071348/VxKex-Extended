@@ -31,6 +31,7 @@ FAQ
 
 **A**: The list of compatible applications includes, but is not limited to:
 
+- Anki
 - Bespoke Synth
 - Blender
 - Blockbench
@@ -38,17 +39,20 @@ FAQ
 - Chromium (including Ungoogled Chromium)
 - Citra
 - Commander Wars
+- CopyQ
 - Cygwin
 - Dasel
 - Discord Canary
 - ElectronMail
 - Firefox
+- FlareSolverr
 - GIMP
 - GitHub Desktop
 - HandBrake
 - Kodi
 - Life is Strange: True Colors
 - Listary
+- Miru
 - MKVToolNix
 - MongoDB
 - MPC-Qt
@@ -60,17 +64,22 @@ FAQ
 - qBittorrent
 - QMMP
 - Qt Creator
+- RedNotebook
 - Rufus
 - Steel Bank Common Lisp
+- Signal
 - SpaceEngine
 - Spotify
+- StaxRip
 - Steinberg SpectraLayers
 - TeamTalk
 - Universe Sandbox
 - VSCode and VSCodium
+- WebCord
 - WinDbg (classic from Windows 11 SDK, and preview)
 - Yuzu (gameplay was not tested)
 - Zig
+- Zoner Photo Studio
 
 See the **Application Compatibility List.docx** file, which is installed together with Ext7, for more information.
 
