@@ -75,7 +75,7 @@ FAQ
 - TeamTalk
 - Universe Sandbox
 - VSCode and VSCodium
-- WebCord
+- Webcord
 - WinDbg (classic from Windows 11 SDK, and preview)
 - Yuzu (gameplay was not tested)
 - Zig
