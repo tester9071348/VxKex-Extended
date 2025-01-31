@@ -72,7 +72,10 @@ EXPORTS
 	GetCurrentPackageFullName
 	GetCurrentPackageId
 	GetPackageFamilyName
+	PackageFamilyNameFromId
+	GetCurrentPackageFamilyName
 	GetPackageFullName
+	GetPackagePathByFullName
 	GetPackagesByPackageFamily
 	PackageFamilyNameFromFullName
 
