@@ -129,8 +129,9 @@ produced by compiling Ext7 in x86 first, before it can be used in x64.
 The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the version
 information globally by 1 each time it is executed.
 
-:
-KexPathCch -> KexDll -> ... -> Clean_VxKex_NEXT.bat -> KexSetup
+KexPathCch -> KexDll -> KexGui -> KexW32ML -> KxCfgHlp -> KxAdvapi -> KxBase -> KxCom -> KxCrt -> KxCryp -> KxDx -> KxMi -> KxNet -> KxNt -> KxUia -> KxUser -> CpiwBypa -> KexCfg -> KexShlEx -> VxKexLdr -> VxlView -> KexSetup
+
+Ignore any warnings
 
 Screenshots
 ============
