@@ -25,7 +25,8 @@ After installation, usage is easy. Here are the ways to enable Ext7:
 
 Some programs require additional configuration. There's a file called "**Application Compatibility List.docx**" inside the Ext7 installation folder (which is C:\Program Files\VxKex by default) which details these steps, but for the most part, all configuration is self-explanatory.
 
-If you are a developer, source code is provided as a zip and tar.gz files on the releases page.
+If you are a developer, source code is provided as a zip and tar.gz files on the releases page. Compilation
+instructions are at the bottom of this file.
 
 FAQ
 ===
