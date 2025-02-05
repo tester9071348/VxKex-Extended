@@ -129,7 +129,7 @@ The program "\01-Development Utilities\vautogen\vautogen.exe" will increment the
 information globally by 1 each time it is executed.
 
 :
-KexPathCch -> KexDll
+KexPathCch -> KexDll -> ... -> Clean_VxKex_NEXT.bat -> KexSetup
 
 Screenshots
 ============
