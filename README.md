@@ -44,7 +44,7 @@ FAQ
 - Dasel
 - Discord
 - ElectronMail
-- Firefox (up to version 134.0.2)
+- Firefox
 - FlareSolverr
 - GIMP
 - GitHub Desktop
