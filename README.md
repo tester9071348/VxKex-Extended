@@ -106,7 +106,7 @@ The majority of Qt6 applications will work, and many Electron applications will 
 
 **Q: Can I remove VxKex or VxKex Extended after upgrading to Windows 8/8.1/10/11?**
 
-**A**: Yes. If VxKex is installed, update it to VxKex Extended, then uninstall it from control panel.
+**A**: Yes. If VxKex is installed, update it to VxKex Extended, then uninstall it from Control Panel or Settings.
 
 **Q: How does VxKex Extended work?**
 
