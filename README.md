@@ -35,6 +35,7 @@ FAQ
 - Bespoke Synth
 - Blender
 - Blockbench
+- Browservice
 - Calibre
 - Chromium (including Ungoogled Chromium)
 - Citra
