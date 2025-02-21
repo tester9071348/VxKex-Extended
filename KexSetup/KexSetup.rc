@@ -1,0 +1,234 @@
+﻿#include "buildcfg.h"
+#include <Windows.h>
+#include <KexVer.h>
+#include "resource.h"
+
+1 VERSIONINFO
+	FILEVERSION KEX_VERSION_FV
+	FILEOS VOS_NT
+#if defined(KEX_TARGET_TYPE_EXE)
+	FILETYPE VFT_APP
+#elif defined(KEX_TARGET_TYPE_DLL)
+	FILETYPE VFT_DLL
+#endif
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "LegalCopyright",				KEX_WEB_STR
+			VALUE "FileDescription",			"VxKex NEXT Setup and Maintenance Tool"
+			VALUE "FileVersion",				KEX_VERSION_STR
+			VALUE "InternalName",				"KexSetup"
+			VALUE "OriginalFilename",			"KEXSETUP.EXE"
+		END
+                BLOCK "041904E4"
+		BEGIN
+			VALUE "LegalCopyright",				KEX_WEB_STR
+			VALUE "FileDescription",			"Программа установки и обслуживания VxKex NEXT"
+			VALUE "FileVersion",				KEX_VERSION_STR
+			VALUE "InternalName",				"KexSetup"
+			VALUE "OriginalFilename",			"KEXSETUP.EXE"
+		END
+		BLOCK "080404E4"
+		BEGIN
+			VALUE "LegalCopyright",				KEX_WEB_STR
+			VALUE "FileDescription",			"VxKex NEXT 安装和维护工具"
+			VALUE "FileVersion",				KEX_VERSION_STR
+			VALUE "InternalName",				"KexSetup"
+			VALUE "OriginalFilename",			"KEXSETUP.EXE"
+		END
+	END
+
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x0409 0x04E4, 0x0804 0x04E4
+	END
+END
+
+IDI_APPICON ICON "KexSetup.ico"
+
+
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+
+IDD_MAINWINDOW DIALOGEX 0, 0, MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT
+	STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_CAPTION | WS_POPUPWINDOW | WS_MINIMIZEBOX
+	CAPTION "VxKex NEXT 安装程序"
+	FONT 8, "Microsoft Yahei"
+BEGIN
+	CONTROL	"", IDSTATIC, STATIC, SS_WHITERECT, 0, 0, MAIN_WINDOW_WIDTH, 35
+	LTEXT	"", IDHDRTEXT, 10, 8, MAIN_WINDOW_WIDTH - 20, 10
+	LTEXT	"", IDHDRSUBTEXT, 15, 18, MAIN_WINDOW_WIDTH - 25, 10
+	CONTROL	"", IDSTATIC, STATIC, SS_ETCHEDHORZ, 0, 35, MAIN_WINDOW_WIDTH + 2, 0
+	CONTROL "", IDPROGRESS, "msctls_progress32", WS_CHILD | WS_VISIBLE | PBS_SMOOTH | PBS_MARQUEE, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 1. Selection of installation directory
+	LTEXT	"安装程序将安装 VxKex NEXT 到以下文件夹中。如果要安装到其他文件夹，请单击“浏览”按钮并选择其他文件夹。单击“安装”后，安装将开始。",
+			IDS1GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	EDITTEXT IDS1DIRPATH, 15, 70, MAIN_WINDOW_WIDTH - 85, 13
+	PUSHBUTTON "浏览(&R)...", IDS1BROWSE, MAIN_WINDOW_WIDTH - 65, 69, 50, 15
+	LTEXT	"", IDS1SPACEREQ, 15, MAIN_WINDOW_HEIGHT - 55, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"", IDS1SPACEAVAIL, 15, MAIN_WINDOW_HEIGHT - 45, MAIN_WINDOW_WIDTH - 30, 10
+#ifdef _DEBUG
+	LTEXT	"这是 VxKex NEXT 的调试版本。用于调试的 PDB（程序数据库）文件将与 VxKex NEXT 文件一起安装。", IDS1PDBNOTICE, 15, 90, MAIN_WINDOW_WIDTH - 30, 30
+#endif
+
+	// Scene 2. Installation in progress screen
+	LTEXT	"安装程序正在安装 VxKex NEXT。请等待安装完成。", IDS2GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 3. Installation complete screen
+	LTEXT	"安装现已完成。要将 VxKex NEXT 作用于程序，请右键单击 EXE 或 MSI 文件，打开“属性”对话框，然后选择 VxKex 选项卡。",
+			IDS3GUIDETEXT, 30, 45, MAIN_WINDOW_WIDTH - 50, 30
+	AUTOCHECKBOX "打开 VxKex NEXT 全局设置（高级）", IDS3KEXCFG, 25, 70, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 4. Uninstall info screen
+	LTEXT	"安装程序将卸载 VxKex NEXT。作为卸载过程的一部分，所有 VxKex NEXT 文件和注册表项都将从您的计算机中删除。除非勾选下面的复选框，否则您为每个应用程序配置的所有 VxKex NEXT 设置都将被删除。", IDS4GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 50
+	LTEXT	"单击“卸载”时，安装程序将执行卸载。", IDS4GUIDETEXT2, 15, 75, MAIN_WINDOW_WIDTH - 30, 50
+	AUTOCHECKBOX "保留我的兼容性设置(&K)", IDS4PRESERVECONFIG, 25, 110, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 5. Uninstallation in progress screen
+	LTEXT	"安装程序正在删除 VxKex NEXT。请等待删除完成。", IDS5GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 6. Uninstallation complete screen
+	LTEXT	"VxKex NEXT 已被删除。单击“完成”退出安装程序。", IDS6GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"如果应用程序使用 VxKex NEXT 文件，这些文件可能会保留在您的计算机上。下次重新启动计算机时，它们将自动删除。", IDS6GUIDETEXT2, 15, 60, MAIN_WINDOW_WIDTH - 30, 30
+
+	// Scene 7. Update info screen
+	LTEXT	"安装程序将把 VxKex 更新到较新版本。您的所有自定义设置和配置都将保留。单击“更新”后，安装程序将开始更新过程。", IDS7GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	LTEXT	"以下是更新日志，显示了新版本的更改：", IDS7GUIDETEXT2, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+	EDITTEXT IDS7CHANGELOG, 15, 80, MAIN_WINDOW_WIDTH - 30, 105, ES_MULTILINE | WS_VSCROLL | ES_READONLY
+
+	// Scene 8. Update in progress screen
+	LTEXT	"安装程序正在更新 VxKex。请等待更新完成。", IDS8GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 9. Update complete screen
+	LTEXT	"更新现已完成。单击“完成”退出安装程序。", IDS9GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	CONTROL "", IDSTATIC, STATIC, SS_ETCHEDHORZ, 7, MAIN_WINDOW_HEIGHT - 27, MAIN_WINDOW_WIDTH - 13, 0
+	DEFPUSHBUTTON	"",	IDNEXT, MAIN_WINDOW_WIDTH - 111,	MAIN_WINDOW_HEIGHT - 21, 50, 15
+
+	PUSHBUTTON		"取消", IDCANCEL2,	MAIN_WINDOW_WIDTH - 58,		MAIN_WINDOW_HEIGHT - 21, 50, 15
+END
+
+
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+
+IDD_MAINWINDOW DIALOGEX 0, 0, MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT
+	STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_CAPTION | WS_POPUPWINDOW | WS_MINIMIZEBOX
+	CAPTION "VxKex NEXT Setup"
+	FONT 8, "Segoe UI"
+BEGIN
+	CONTROL	"", IDSTATIC, STATIC, SS_WHITERECT, 0, 0, MAIN_WINDOW_WIDTH, 35
+	LTEXT	"", IDHDRTEXT, 10, 8, MAIN_WINDOW_WIDTH - 20, 10
+	LTEXT	"", IDHDRSUBTEXT, 15, 18, MAIN_WINDOW_WIDTH - 25, 10
+	CONTROL	"", IDSTATIC, STATIC, SS_ETCHEDHORZ, 0, 35, MAIN_WINDOW_WIDTH + 2, 0
+	CONTROL "", IDPROGRESS, "msctls_progress32", WS_CHILD | WS_VISIBLE | PBS_SMOOTH | PBS_MARQUEE, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 1. Selection of installation directory
+	LTEXT	"Setup will install VxKex NEXT into the following folder. If you want to install to a different folder, click the Browse button and choose another folder. Once you click ""Install"", installation will begin.",
+			IDS1GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	EDITTEXT IDS1DIRPATH, 15, 70, MAIN_WINDOW_WIDTH - 85, 13
+	PUSHBUTTON "B&rowse...", IDS1BROWSE, MAIN_WINDOW_WIDTH - 65, 69, 50, 15
+	LTEXT	"", IDS1SPACEREQ, 15, MAIN_WINDOW_HEIGHT - 55, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"", IDS1SPACEAVAIL, 15, MAIN_WINDOW_HEIGHT - 45, MAIN_WINDOW_WIDTH - 30, 10
+#ifdef _DEBUG
+	LTEXT	"This is a debug build of VxKex NEXT. The PDB (program database) files for debugging will be installed alongside VxKex NEXT files.", IDS1PDBNOTICE, 15, 90, MAIN_WINDOW_WIDTH - 30, 30
+#endif
+
+	// Scene 2. Installation in progress screen
+	LTEXT	"Setup is now installing VxKex NEXT. Please wait until the installation is complete.", IDS2GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 3. Installation complete screen
+	LTEXT	"Installation is now complete. To use VxKex NEXT for a program, right click on the EXE or MSI file, open the Properties dialog, and select the VxKex tab.",
+			IDS3GUIDETEXT, 30, 45, MAIN_WINDOW_WIDTH - 50, 30
+	AUTOCHECKBOX "Open VxKex NEXT global settings (advanced)", IDS3KEXCFG, 25, 70, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 4. Uninstall info screen
+	LTEXT	"Setup will uninstall VxKex NEXT. As a part of the uninstall process, all VxKex NEXT files and registry keys will be removed from your computer. All VxKex NEXT settings you have configured for each application will be removed unless you check the checkbox below.", IDS4GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 50
+	LTEXT	"When you click ""Uninstall"", Setup will perform the uninstallation.", IDS4GUIDETEXT2, 15, 75, MAIN_WINDOW_WIDTH - 30, 50
+	AUTOCHECKBOX "&Keep my compatibility settings", IDS4PRESERVECONFIG, 25, 110, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 5. Uninstallation in progress screen
+	LTEXT	"Setup is now removing VxKex NEXT. Please wait until the removal is complete.", IDS5GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 6. Uninstallation complete screen
+	LTEXT	"VxKex NEXT has been removed. Click Finish to exit Setup.", IDS6GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"If applications were using VxKex NEXT files, they may remain on your computer. They will be automatically deleted when you next restart your computer.", IDS6GUIDETEXT2, 15, 60, MAIN_WINDOW_WIDTH - 30, 30
+
+	// Scene 7. Update info screen
+	LTEXT	"Setup will update VxKex to a newer version. All of your custom settings and configuration will be preserved. When you click ""Update"", Setup will begin the update process.", IDS7GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	LTEXT	"Here is the change log, which shows you the changes in the new version:", IDS7GUIDETEXT2, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+	EDITTEXT IDS7CHANGELOG, 15, 80, MAIN_WINDOW_WIDTH - 30, 105, ES_MULTILINE | WS_VSCROLL | ES_READONLY
+
+	// Scene 8. Update in progress screen
+	LTEXT	"Setup is now updating VxKex. Please wait until the update is complete.", IDS8GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 9. Update complete screen
+	LTEXT	"The update is now complete. Click Finish to exit Setup.", IDS9GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	CONTROL "", IDSTATIC, STATIC, SS_ETCHEDHORZ, 7, MAIN_WINDOW_HEIGHT - 27, MAIN_WINDOW_WIDTH - 13, 0
+	DEFPUSHBUTTON	"",	IDNEXT, MAIN_WINDOW_WIDTH - 111,	MAIN_WINDOW_HEIGHT - 21, 50, 15
+
+	PUSHBUTTON		"Cancel", IDCANCEL2,	MAIN_WINDOW_WIDTH - 58,		MAIN_WINDOW_HEIGHT - 21, 50, 15
+END
+
+LANGUAGE LANG_RUSSIAN, SUBLANG_NEUTRAL
+
+IDD_MAINWINDOW DIALOGEX 0, 0, MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT
+	STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_CAPTION | WS_POPUPWINDOW | WS_MINIMIZEBOX
+	CAPTION "Программа установки VxKex NEXT"
+	FONT 8, "Segoe UI"
+BEGIN
+	CONTROL	"", IDSTATIC, STATIC, SS_WHITERECT, 0, 0, MAIN_WINDOW_WIDTH, 35
+	LTEXT	"", IDHDRTEXT, 10, 8, MAIN_WINDOW_WIDTH - 20, 10
+	LTEXT	"", IDHDRSUBTEXT, 15, 18, MAIN_WINDOW_WIDTH - 25, 10
+	CONTROL	"", IDSTATIC, STATIC, SS_ETCHEDHORZ, 0, 35, MAIN_WINDOW_WIDTH + 2, 0
+	CONTROL "", IDPROGRESS, "msctls_progress32", WS_CHILD | WS_VISIBLE | PBS_SMOOTH | PBS_MARQUEE, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 1. Selection of installation directory
+	LTEXT	"Программа установки будет устанавливать VxKex NEXT в указанную папку. Если вы хотите установить в другую папку, нажмите кнопку ""Обзор"" и выберите другую папку. Чтобы начать установку, нажмите кнопку ""Установить"".",
+			IDS1GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	EDITTEXT IDS1DIRPATH, 15, 70, MAIN_WINDOW_WIDTH - 85, 13
+	PUSHBUTTON "О&бзор...", IDS1BROWSE, MAIN_WINDOW_WIDTH - 65, 69, 50, 15
+	LTEXT	"", IDS1SPACEREQ, 15, MAIN_WINDOW_HEIGHT - 55, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"", IDS1SPACEAVAIL, 15, MAIN_WINDOW_HEIGHT - 45, MAIN_WINDOW_WIDTH - 30, 10
+#ifdef _DEBUG
+	LTEXT	"Это отладочная сборка VxKex NEXT. PDB-файлы (базы данных программы), предназначенные для отладки, установятся вместе с файлами VxKex NEXT.", IDS1PDBNOTICE, 15, 90, MAIN_WINDOW_WIDTH - 30, 30
+#endif
+
+	// Scene 2. Installation in progress screen
+	LTEXT	"Программа установки сейчас устанавливает VxKex NEXT. Подождите, пока завершится процесс установки.", IDS2GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 3. Installation complete screen
+	LTEXT	"Установка завершена. Чтобы применить VxKex NEXT к программе, нажмите правой кнопкой мыши на EXE и MSI-файл, откройте окно свойств файла и переключитесь на вкладку VxKex.",
+			IDS3GUIDETEXT, 30, 45, MAIN_WINDOW_WIDTH - 50, 30
+	AUTOCHECKBOX "Открыть общие настройки VxKex NEXT (для опытных)", IDS3KEXCFG, 25, 70, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 4. Uninstall info screen
+	LTEXT	"Программа установки деинсталлирует VxKex NEXT. Как часть процесса деинсталляции, все файлы VxKex NEXT, а также все ключи реестра будут удалены с вашего компьютера. Все настройки VxKex NEXT, которые были указаны для каждой программы будут удалены до тех пор, пока вы не укажете флажком ниже.", IDS4GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 50
+	LTEXT	"Когда вы нажимаете на кнопку ""Удалить"", программа установки проведет деинсталляцию.", IDS4GUIDETEXT2, 15, 75, MAIN_WINDOW_WIDTH - 30, 50
+	AUTOCHECKBOX "&Keep my compatibility settings", IDS4PRESERVECONFIG, 25, 110, MAIN_WINDOW_WIDTH - 40, 10
+
+	// Scene 5. Uninstallation in progress screen
+	LTEXT	"Программа установки удаляет VxKex NEXT. Подождите, пока завершится удаление", IDS5GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 6. Uninstallation complete screen
+	LTEXT	"VxKex NEXT удален. Нажатие кнопку ""Закончить"", чтобы выйти из программы установки.", IDS6GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+	LTEXT	"Если приложения используют файлы VxKex NEXT, они могут оставаться на вашем компьютере. Они будут удалены перед последующей перезагрузкой компьютера.", IDS6GUIDETEXT2, 15, 60, MAIN_WINDOW_WIDTH - 30, 30
+
+	// Scene 7. Update info screen
+	LTEXT	"Программа установки обновит VxKex до более новой версии. Все ваши пользовательские настройки и конфигурации будут сохранены. Чтобы начать процесс обновления, нажмите на кнопку ""Обновить"".", IDS7GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 30
+	LTEXT	"Here is the change log, which shows you the changes in the new version:", IDS7GUIDETEXT2, 15, 65, MAIN_WINDOW_WIDTH - 30, 10
+	EDITTEXT IDS7CHANGELOG, 15, 80, MAIN_WINDOW_WIDTH - 30, 105, ES_MULTILINE | WS_VSCROLL | ES_READONLY
+
+	// Scene 8. Update in progress screen
+	LTEXT	"Программа установки обновляет VxKex. Подождите, пока обновление завершится.", IDS8GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	// Scene 9. Update complete screen
+	LTEXT	"Обновление завершено. Нажатие кнопку ""Закончить"", чтобы выйти из программы установки.", IDS9GUIDETEXT, 15, 45, MAIN_WINDOW_WIDTH - 30, 10
+
+	CONTROL "", IDSTATIC, STATIC, SS_ETCHEDHORZ, 7, MAIN_WINDOW_HEIGHT - 27, MAIN_WINDOW_WIDTH - 13, 0
+	DEFPUSHBUTTON	"",	IDNEXT, MAIN_WINDOW_WIDTH - 111,	MAIN_WINDOW_HEIGHT - 21, 50, 15
+
+	PUSHBUTTON		"Отмена", IDCANCEL2,	MAIN_WINDOW_WIDTH - 58,		MAIN_WINDOW_HEIGHT - 21, 50, 15
+END
