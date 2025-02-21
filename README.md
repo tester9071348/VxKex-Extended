@@ -8,10 +8,10 @@ To download and install, see the [releases page](https://github.com/tester907134
 **Uninstalling the following softwares before installing is recommended:**
 
 - **0patch Agent**
- It might cause Chromium-based browsers and JetBrains IDEs to crash after enabling VxKex Extended and running it.
+  It might cause Chromium-based browsers and JetBrains IDEs to crash after enabling VxKex Extended and running it.
 
 - **MacType**
- It might cause all programs to fail to start after enabling VxKex Extended
+  It might cause all programs to fail to start after enabling VxKex Extended
 
 After installation, usage is easy. Here are the ways to enable VxKex Extended:
 1. Just right click on a program (.exe or .msi), open the Properties dialog, and select "VxKex" tab. Then, check the check box which says "Enable VxKex NEXT for this program", and try to run the program. For shortcuts, select "Shortcut" tab in the Properties dialog, click "Open file location" button, and then perform the actions above.
