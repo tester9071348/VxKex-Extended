@@ -451,3 +451,35 @@ KXBASEAPI PVOID WINAPI MapViewOfFile3FromApp(
 		ExtendedParameters,
 		ParameterCount);
 }
+
+KXBASEAPI PVOID WINAPI VirtualAlloc2(
+	IN OPTIONAL HANDLE Process,
+	IN OPTIONAL PVOID BaseAddress,
+	IN SIZE_T Size,
+	IN ULONG AllocationType,
+	IN ULONG PageProtection,
+	IN OUT MEM_EXTENDED_PARAMETER *ExtendedParameters OPTIONAL,
+	IN ULONG ParameterCount)
+{
+	if(Process == NULL) Process = GetCurrentProcess();
+
+	if(ExtendedParameters) {
+		ULONG Index;
+
+		for(Index = 0; Index < ParameterCount; ++Index) {
+			switch(ExtendedParameters[Index].Type) {
+			case MemExtendedParameterAddressRequirements:
+				KexLogWarningEvent(L"Address requirements were specified to VirtualAlloc2");
+				BaseSetLastNTError(STATUS_INVALID_PARAMETER);
+				return NULL;
+			case MemExtendedParameterNumaNode:
+				return VirtualAllocExNuma(Process, BaseAddress, Size, AllocationType, PageProtection, ExtendedParameters[Index].ULong);
+			default:
+				BaseSetLastNTError(STATUS_INVALID_PARAMETER);
+				return NULL;
+			}
+		}
+	}
+
+	return VirtualAllocEx(Process, BaseAddress, Size, AllocationType, PageProtection);
+}
