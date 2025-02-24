@@ -4,7 +4,7 @@
 
     - Added Russian localization in VxKex Setup
 
-    - Added support for latest Chromium version.
+    - Added support for latest Chromium-based browsers versions.
 
 VERSION 1.1.2.1439
     - Fixed a bug which caused Thunderbird and Betterbird to crash.
