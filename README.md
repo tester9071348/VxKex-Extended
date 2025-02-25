@@ -93,7 +93,7 @@ The majority of Qt6 applications will work, and many Electron applications will 
 
 **Q: Do I need to have specific updates installed?**
 
-**A**: Users of Windows 7 without any updates can still use it, but many programs require Service Pack 1, KB2533623 (DllDirectories update) and KB2670838 (Platform Update) in order to run. It is a good idea to install those updates.
+**A**: Users of Windows 7 without any updates can still use it, but many programs require Service Pack 1, KB2533623 (DllDirectories update), KB2670838 (Platform Update), KB4490628 (SSU from March 2019) and KB4474419 (Update for support SHA-256 and SHA-2) in order to run. It is a good idea to install those updates.
 
 **Q: If I have ESUs (Extended Security Updates) installed, can I use VxKex Extended?**
 
