@@ -6,6 +6,8 @@
 
     - Added support for latest Chromium-based browsers versions.
 
+    - Fixed a bug which caused Seamonkey to crash.
+
 VERSION 1.1.2.1439
     - Fixed a bug which caused Thunderbird and Betterbird to crash.
 
