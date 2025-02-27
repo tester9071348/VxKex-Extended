@@ -1,6 +1,10 @@
 Introduction
 ============
 
+> [!NOTE]
+>
+> 1.1.2.1440 release on 1 March
+
 VxKex Extended is a set of API extensions for Windows 7 that allow some Windows 8, 8.1 and 10-exclusive applications to run on Windows 7.
 
 To download and install, see the [releases page](https://github.com/tester9071348/VxKex-Extended/releases).
