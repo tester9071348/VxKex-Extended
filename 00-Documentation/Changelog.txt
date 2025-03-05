@@ -1,6 +1,4 @@
 ﻿VERSION 1.1.2.1440
-    - Added Russian localization in VxKex Setup
-
     - Added support for latest Chromium-based browsers versions.
 
     - Fixed a bug which caused Seamonkey to crash.
