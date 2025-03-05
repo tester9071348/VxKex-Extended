@@ -47,7 +47,7 @@ To provide more detailed information about APIs used by the application, you can
    ```  
    YY.Depends.Analyzer.exe "D:\Tool\SomeProgram.exe" /IgnoreReady /ReportView:Table /Target:6.1.7600  
    ```  
-3. This will generate a Markdown file named `SomeProgram.exe.md` in the same directory as the analyzer. The file contains a list of API/s that the application might use and is available only on Windows 8 or higher.  
+3. This will generate a Markdown file named `SomeProgram.exe.md` in the same directory as the analyzer. The file contains a list of API(s) that the application might use and is available only on Windows 8 or higher.  
 
 4. Open the `.md` file, copy its entire contents, and paste it into the collapsible section below.
 
