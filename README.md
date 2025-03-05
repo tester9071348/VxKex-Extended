@@ -103,6 +103,11 @@ The majority of Qt6 applications will work, and many Electron applications will 
 
 **A**: Yes. There is no problem with ESUs.
 
+**Q: Do console applications work with VxKex Extended?**
+
+**A:** Yes. After you have enabled VxKex Extended for a program you can use it through the
+command prompt as normal.
+
 **Q: Can I use this with Windows 8 or 8.1?**
 
 **A**: Currently, VxKex Extended is designed for use only with Windows 7. If you use Windows 8 or 8.1, VxKex Extended will do nothing useful.
