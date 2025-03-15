@@ -34,7 +34,7 @@ To help developers investigate the issue, please follow the steps below to colle
 
 3. **Collect logs**:
    - Close the application (or close the error window).
-   - Go back to `%LOCALAPPDATA%\Local\VxKex\Logs` and **zip** all newly created log files.
+   - Go to `%LOCALAPPDATA%\Local\VxKex\Logs` and **zip** all newly created log files.
 
 4. **Attach the zipped log file here.**
 
@@ -63,6 +63,6 @@ PASTE THE ENTIRE .MD CONTENT HERE
 Please provide the following details about your environment:
 
 - **Operating System**: (e.g., Windows 7 SP1 English, 64bit, with ESU updates)
-- **VxKex Extended Version**: (e.g., 1.1.2.1440)
+- **VxKex Extended Version**: (e.g., 1.1.2.1442)
 
 Feel free to add any other details or context that might be helpful for reproducing the issue or understanding the behavior.
