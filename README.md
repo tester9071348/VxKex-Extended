@@ -32,12 +32,16 @@ FAQ
 **A**: The list of compatible applications includes, but is not limited to:
 
 - Anki
+  - The first time you open the application, a popup may appear complaining that it could not initialize the video driver. Simply start the application again and it will work. Subsequent launches will not have this problem.
 - Bespoke Synth
 - Blender
+  - Installer does not work. Use the portable version.
 - Blockbench
 - Browservice
+  - Add this to command line: --chromium-args=disable-gpu
 - Calibre
 - Chromium (including Ungoogled Chromium)
+  - There is a known issue with some debug builds displaying a crash dialog on some websites. It is harmless and you can just minimize the dialog.
 - Citra
 - Commander Wars
 - CopyQ
@@ -45,43 +49,62 @@ FAQ
 - Dasel
 - Discord
 - ElectronMail
-- Firefox (up to version 134.0.2)
+- Firefox (up to version 134.0.2 with version for Chromium-based browsers)
+  - Don't enable version spoof, only enable VxKex Extended. An error dialog may occur under some conditions after quitting the browser.
 - FlareSolverr
 - GIMP
+  - Installer requires version spoof to Windows 10. Main GIMP EXE requires VxKex Extended enabled to avoid error messages and broken Python features. You might see some Python-related error messages in the console. These are network related and do not represent a real issue.
 - GitHub Desktop
+  - Enable VxKex Extended for the installer before installing. No version spoof needed. Enable VxKex Extended for the app after installing as well (%LocalAppData%\GitHubDesktop\GitHubDesktop.exe).
 - HandBrake
+  - Requires version spoof to Windows 10. .NET Desktop Runtime 6.0.x is required. Will crash without. If it crashes at startup please ensure the .NET Desktop Runtime is installed. After opening HandBrake, go to Tools->Preferences->Advanced and make sure the "Run each queued job in a separate worker process" checkbox is NOT CHECKED. This feature doesn't work but luckily it isn't very important.
 - Kate
 - Kodi
+  - Installer requires version spoof to Windows 8.1, works afterwards without VxKex Extended.
 - Life is Strange: True Colors
+  - Without VxKex Extended, this game may not open due to missing xinput1_4.dll, and/or may crash after a short amount of time due to faulty error handling code. Known issue: The game shows a crash dialog after exiting. This does not affect the functionality of the game.
 - Listary
+  - Installer requires version spoof to Windows 10. Listary EXE requires VxKex Extended enabled, version spoof to Windows 10 is recommended, otherwise automatic updater will not work.
 - Miru
 - MKVToolNix
 - MongoDB
 - MPC-Qt
 - MPV
 - MPV.NET
+  - .NET Desktop Runtime 6.0.x is required.
 - Opera
+  - Installer requires version spoof to Windows 10. Opera EXE requires VxKex Extended enabled, but no version spoof is needed.
 - osu!lazer
+  - Requires version spoof to Windows 8.1. After installation, go to %LocalAppData%\osulazer and enable VxKex Extended for Update.exe with version spoof to Windows 8.1. An error dialog may appear during installation. It is harmless and may be dismissed.
 - Python
+  - Installer works with version spoof to Windows 10. In order to run Python, you must enable VxKex Extended for python.exe and pythonw.exe, which are located in the Python installation folder. The default installation folder is %LocalAppData%\Programs\Python. No version spoof is required. In order to be able to uninstall Python, you can use the installer that has exact same version of installed Python. You can also enable VxKex Extended and version spoof to Windows 10 for the uninstaller. The uninstaller is located at "%LocalAppData%\Package Cache" inside one of the folders. It is usually the only EXE file present. Due to the issues with the uninstaller, it is recommended that you only use the portable version of Python.
 - qBittorrent
+- QEMU
 - QMMP
 - Qt Creator
 - RedNotebook
 - Rufus
 - Steel Bank Common Lisp
 - Signal
+  - Installer requires version spoof to Windows 10. After installation you may see an error message saying that DiscardVirtualMemory could not be found. Ignore it. Enable VxKex Extended for Signal.exe in %LocalAppData%\Programs\signal-desktop. No version spoof is required.
 - SpaceEngine
 - Spotify
+  - Installer requires version spoof to Windows 10. After installation, enable VxKex Extended for Spotify.exe in %AppData%\Spotify. No version spoof is required.
 - StaxRip
+  - The app itself opens without VxKex Extended but the bundled applications which it uses (Python and MKVToolNix) require VxKex Extended. Therefore it is recommended to enable VxKex Extended for this program. Ensure that the “Disable VxKex NEXT for child processes” option is not checked.
 - Steinberg SpectraLayers
+  - Installer works without VxKex Extended. Activation Manager Unlocker requires version spoof to Windows 10.
 - TeamTalk
 - Universe Sandbox
-- VSCode and VSCodium
+- VSCode (including VSCodium)
 - Webcord
 - WinDbg (classic from Windows 11 SDK, and preview)
-- Yuzu (gameplay was not tested)
+  - It is recommended to select the “Disable VxKex NEXT for child processes” option, otherwise the applications you are debugging may inadvertently have VxKex Extended enabled as well. The “Time Travel Debugging” feature in preview version does not work due to a missing Windows Runtime interface.
+- Yuzu
+  - Gameplay was not tested.
 - Zig
 - Zoner Photo Studio
+  - Installer does not work. Use the portable version. GPU accelerated calculations are not available – CPU will be used instead. Due to large number of child processes created, it is recommended that you select “Disable VxKex NEXT for child processes” in the settings.
 
 See the **Application Compatibility List.docx** file, which is installed together with VxKex Extended, for more information.
 
