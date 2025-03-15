@@ -97,6 +97,7 @@ KXBASEAPI LONG WINAPI PackageFamilyNameFromId(
 	}
 	return APPMODEL_ERROR_NO_PACKAGE;
 }
+
 KXBASEAPI LONG WINAPI GetCurrentPackageFamilyName(
 	IN OUT PULONG NameLength,
 	OUT	PWSTR  PackageFamilyName OPTIONAL)
