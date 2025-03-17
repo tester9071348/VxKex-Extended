@@ -49,9 +49,10 @@ FAQ
 - Dasel
 - Discord
 - ElectronMail
-- Firefox
+- Firefox (up to version 134.0.2 with version for Chromium-based browsers)
   - Don't enable version spoof, only enable VxKex Extended. An error dialog may occur under some conditions after quitting the browser.
 - FlareSolverr
+- Freetube
 - GIMP
   - Installer requires version spoof to Windows 10. Main GIMP EXE requires VxKex Extended enabled to avoid error messages and broken Python features. You might see some Python-related error messages in the console. These are network related and do not represent a real issue.
 - GitHub Desktop
