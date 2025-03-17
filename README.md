@@ -49,7 +49,7 @@ FAQ
 - Dasel
 - Discord
 - ElectronMail
-- Firefox (up to version 134.0.2 with version for Chromium-based browsers)
+- Firefox
   - Don't enable version spoof, only enable VxKex Extended. An error dialog may occur under some conditions after quitting the browser.
 - FlareSolverr
 - GIMP
